@@ -5,6 +5,7 @@ openssh-server
 g++
 gcc
 default-jdk
+gtk2-engines-murrine
 python3
 kpartx
 mtools
