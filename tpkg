@@ -16,3 +16,4 @@ xclip
 xserver-xorg-input-evdev
 fonts-noto
 libreoffice
+linux-headers-amd64
