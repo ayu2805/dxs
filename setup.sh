@@ -32,8 +32,19 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 sudo apt install -y $(cat tpkg)
+sudo systemctl enable --now cups
 sudo systemctl enable --now ufw
+echo ""
+sudo smbpasswd -a $un
+echo ""
+sudo systemctl enable smbd
+sudo ufw allow CUPS
+sudo ufw allow CIFS
+sudo ufw allow Samba
+sudo ufw allow OpenSSH
+sudo cupsctl
 sudo ufw enable
+pipx ensurepath
 chsh -s /usr/bin/fish
 sudo chsh -s /usr/bin/fish
 echo -e "VISUAL=nvim\nEDITOR=nvim" | sudo tee /etc/environment > /dev/null
