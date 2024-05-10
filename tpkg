@@ -27,7 +27,7 @@ plzip
 rar
 unar
 samba
-sambaclient
+smbclient
 cifs-utils
 zip
 openprinting-ppds
