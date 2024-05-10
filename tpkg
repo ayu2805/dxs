@@ -19,6 +19,7 @@ lbzip2
 liblz4-tool
 lrzip
 pipx
+numlockx
 lzip
 lzop
 ncompress
@@ -26,6 +27,7 @@ pbzip2
 pigz
 plzip
 rar
+materia-gtk-theme
 unar
 samba
 smbclient

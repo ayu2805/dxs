@@ -59,18 +59,11 @@ cd ..
 rm -rf WhiteSur-icon-theme/
 
 echo ""
-echo "Installing Colloid GTK Theme..."
-echo ""
-git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
-cd Colloid-gtk-theme/
-sudo ./install.sh
-cd ..
-rm -rf Colloid-gtk-theme/
-
-echo ""
 echo "Installing XFCE..."
 echo ""
 sudo apt install -y $(cat xfce)
+sudo sed -i 's/^#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
+sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
 sudo systemctl enable lightdm.service
 
 echo ""
