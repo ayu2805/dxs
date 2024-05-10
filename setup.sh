@@ -50,7 +50,7 @@ sudo chsh -s /usr/bin/fish
 echo -e "VISUAL=nvim\nEDITOR=nvim" | sudo tee /etc/environment > /dev/null
 
 echo ""
-echo "Installing WhiteSur Icon and GTK Theme..."
+echo "Installing WhiteSur Icon Theme..."
 echo ""
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
 cd WhiteSur-icon-theme/
@@ -58,11 +58,14 @@ sudo ./install.sh -a
 cd ..
 rm -rf WhiteSur-icon-theme/
 
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
-cd WhiteSur-gtk-theme/
+echo ""
+echo "Installing Colloid GTK Theme..."
+echo ""
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
+cd Colloid-gtk-theme/
 sudo ./install.sh
 cd ..
-rm -rf WhiteSur-gtk-theme/
+rm -rf Colloid-gtk-theme/
 
 echo ""
 echo "Installing XFCE..."
