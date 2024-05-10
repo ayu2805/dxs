@@ -8,7 +8,7 @@ default-jdk
 python3
 ufw
 neovim
-android-platform-tools
+google-android-platform-tools-installer
 git
 wl-clipboard
 xsel
