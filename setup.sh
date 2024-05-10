@@ -28,7 +28,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo systemctl enable nvidia-suspend.service
     sudo systemctl enable nvidia-hibernate.service
     sudo systemctl enable nvidia-resume.service
-    echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' > /etc/modprobe.d/nvidia-power-management.conf
+    sudo echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' > /etc/modprobe.d/nvidia-power-management.conf
 fi
 
 sudo apt install -y $(cat tpkg)
