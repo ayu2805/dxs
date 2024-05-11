@@ -20,6 +20,4 @@ xfconf-query -c xfce4-notifyd -p  /notify-location -n -t int -s 3
 xfconf-query -c xfce4-notifyd -p  /expire-timeout -n -t int -s 5
 xfconf-query -c xfce4-notifyd -p  /initial-opacity -n -t double -s 1
 
-rm -f ~/.config/fish/config.fish
-pipx ensurepath
-exit
+rm -f xfcetheme.sh
