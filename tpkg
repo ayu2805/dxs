@@ -20,6 +20,7 @@ git
 google-android-platform-tools-installer
 gpart
 gtk2-engines-murrine
+gvfs-backends
 hp-ppd
 jfsutils
 kpartx
