@@ -154,7 +154,7 @@ fi
 
 echo ""
 sudo apt purge zutty ifupdown vim-tiny
-sudo rm /etc/network/interfaces
+sudo rm -f /etc/network/interfaces
 echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
 sudo systemctl restart NetworkManager
 echo "Installer's network configuration successfully removed..."
