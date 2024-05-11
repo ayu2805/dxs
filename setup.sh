@@ -134,7 +134,7 @@ fi
 
 sudo apt purge zutty ifupdown
 sudo rm /etc/network/interfaces
-echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf
+echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
 sudo systemctl restart NetworkManager
 echo "Installer's network configuration successfully removed..."
 echo ""
