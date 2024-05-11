@@ -132,6 +132,19 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y cloudflare-warp
 fi
 
+sudo apt purge zutty ifupdown
+sudo rm /etc/network/interfaces
+echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf
+sudo systemctl restart NetworkManager
+echo "Installer's network configuration successfully removed..."
+echo ""
+read -r -p "Do you want to connect to Wi-Fi? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    read -p "Enter Wi-Fi SSID: " ssid
+    read -p "Enter password : " pswd
+    nmcli device wifi connect "$ssid" password "$pswd"
+fi
+
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 
