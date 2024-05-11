@@ -132,6 +132,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y cloudflare-warp
 fi
 
+echo ""
 sudo apt purge zutty ifupdown
 sudo rm /etc/network/interfaces
 echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
