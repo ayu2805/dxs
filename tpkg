@@ -27,6 +27,7 @@ kpartx
 lbzip2
 liblz4-tool
 libreoffice
+libreoffice-gtk3
 linux-headers-amd64
 lrzip
 lzip
