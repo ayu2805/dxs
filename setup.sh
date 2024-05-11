@@ -140,7 +140,7 @@ sudo systemctl restart NetworkManager
 echo "Installer's network configuration successfully removed..."
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
-echo "source $pwd/xfcetheme.sh" ~./config/fish/config.sh
+cp xfcetheme.sh ~/Desktop/
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
