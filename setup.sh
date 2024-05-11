@@ -132,6 +132,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y cloudflare-warp
 fi
 
+mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 
 echo ""
