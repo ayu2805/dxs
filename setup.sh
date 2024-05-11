@@ -22,12 +22,10 @@ fi
 echo ""
 read -r -p "Do you want to install Nvidia drivers(Maxwell+)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo apt install -y nvidia-driver firmware-misc-nonfree nvidia-suspend-common
+    sudo apt install -y nvidia-detect nvidia-driver firmware-misc-nonfree nvidia-suspend-common
     echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg > /dev/null
     sudo update-grub
-    sudo systemctl enable nvidia-suspend.service
-    sudo systemctl enable nvidia-hibernate.service
-    sudo systemctl enable nvidia-resume.service
+    sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
     echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' | sudo tee /etc/modprobe.d/nvidia-power-management.conf > /dev/null
 fi
 
