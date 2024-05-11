@@ -152,21 +152,16 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-sudo apt purge zutty ifupdown
+sudo apt purge zutty ifupdown vim-tiny
 sudo rm /etc/network/interfaces
 echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
 sudo systemctl restart NetworkManager
 echo "Installer's network configuration successfully removed..."
-echo ""
-read -r -p "Do you want to connect to Wi-Fi? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    read -p "Enter Wi-Fi SSID: " ssid
-    read -p "Enter password : " pswd
-    nmcli device wifi connect "$ssid" password "$pswd"
-fi
-
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 
 echo ""
-echo "You can now reboot your system"
+read -r -p "Do you want to reboot (recommended)? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    sudo systemctl reboot
+fi
