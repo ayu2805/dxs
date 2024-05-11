@@ -141,6 +141,7 @@ echo "Installer's network configuration successfully removed..."
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 cp "XFCE Setup" ~/Desktop/
+sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
