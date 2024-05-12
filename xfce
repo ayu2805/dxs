@@ -10,3 +10,5 @@ lightdm
 lightdm-gtk-greeter-settings
 software-properties-gtk
 thunar-archive-plugin
+gpart
+gparted
