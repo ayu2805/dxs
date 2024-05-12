@@ -131,7 +131,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-sudo apt purge zutty ifupdown vim-tiny vim-common
+sudo apt purge -y zutty ifupdown vim-tiny vim-common
 sudo rm -f /etc/network/interfaces
 echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
 sudo systemctl restart NetworkManager
