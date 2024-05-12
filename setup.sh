@@ -48,6 +48,14 @@ sudo chsh -s /usr/bin/fish
 echo -e "VISUAL=nvim\nEDITOR=nvim" | sudo tee /etc/environment > /dev/null
 
 echo ""
+read -r -p "Do you want to create a Samba Shared folder? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo -e "[Samba Share]\ncomment = Samba Share\npath = /home/$(whoami)/Samba Share\nguest ok = no" | sudo tee -a /etc/samba/smb.conf > /dev/null
+    mkdir ~/Samba\ Share
+    sudo systemctl restart smbd
+fi
+
+echo ""
 echo "Installing WhiteSur Icon Theme..."
 echo ""
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
