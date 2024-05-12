@@ -51,7 +51,7 @@ echo ""
 read -r -p "Do you want to create a Samba Shared folder? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo -e "[Samba Share]\ncomment = Samba Share\npath = /home/$(whoami)/Samba Share\nwritable = yes\nguest ok = no" | sudo tee -a /etc/samba/smb.conf > /dev/null
-    mkdir ~/Samba\ Share
+    mkdir -p ~/Samba\ Share
     sudo systemctl restart smbd
 fi
 
@@ -63,6 +63,15 @@ cd WhiteSur-icon-theme/
 sudo ./install.sh -a
 cd ..
 rm -rf WhiteSur-icon-theme/
+
+echo ""
+echo "Installing Colloid GTK Theme..."
+echo ""
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
+cd Colloid-gtk-theme/
+sudo ./install.sh --tweaks normal
+cd ..
+rm -rf Colloid-gtk-theme/
 
 echo ""
 echo "Installing XFCE..."
