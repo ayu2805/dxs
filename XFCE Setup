@@ -21,3 +21,4 @@ xfconf-query -c xfce4-notifyd -p  /expire-timeout -n -t int -s 5
 xfconf-query -c xfce4-notifyd -p  /initial-opacity -n -t double -s 1
 
 rm -f "$0"
+xfce4-session-logout -l
