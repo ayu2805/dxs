@@ -138,6 +138,7 @@ sudo systemctl restart NetworkManager
 echo "Installer's network configuration successfully removed..."
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
+xdg-user-dirs-update
 cp "XFCE Setup" ~/Desktop/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 
