@@ -31,6 +31,8 @@ fi
 
 sudo apt install -y $(cat tpkg)
 sudo systemctl enable --now iwd
+sudo systemctl enable --now systemd-resolved
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 sudo systemctl enable --now cups
 sudo systemctl enable --now ufw
 echo ""
