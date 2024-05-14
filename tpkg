@@ -1,4 +1,5 @@
 accountsservice
+adb
 alsa-utils
 aria2
 arj
@@ -12,6 +13,7 @@ dmsetup
 dosfstools
 e2fsprogs
 exfatprogs
+fastboot
 fish
 fonts-noto
 foomatic-db-engine
