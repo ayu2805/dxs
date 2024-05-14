@@ -148,7 +148,6 @@ mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 xdg-user-dirs-update
 cp "XFCE Setup" ~/Desktop/
-sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
