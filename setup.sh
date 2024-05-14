@@ -4,7 +4,7 @@ if [ "$(id -u)" = 0 ]; then
     echo "######################################################################"
     echo "This script should NOT be run as root user as it may create unexpected"
     echo " problems and you may have to reinstall Arch. So run this script as a"
-    echo "  normal user. You will be asked for a sudo password when necessary"
+    echo "  normal user. You will be asked for a sudo password when necessary  "
     echo "######################################################################"
     exit 1
 fi
