@@ -56,13 +56,8 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-echo "Installing WhiteSur Icon Theme..."
-echo ""
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
-cd WhiteSur-icon-theme/
-sudo ./install.sh -a
-cd ..
-rm -rf WhiteSur-icon-theme/
+echo "Installing Papirus Icon Theme..."
+wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 echo ""
 echo "Installing Colloid GTK Theme..."
