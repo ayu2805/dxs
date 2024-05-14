@@ -143,11 +143,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-sudo apt purge -y zutty ifupdown vim-tiny vim-common
-sudo rm -f /etc/network/interfaces
-echo -e "[main]\nplugins=keyfile" | sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null
-sudo systemctl restart NetworkManager
-echo "Installer's network configuration successfully removed..."
+sudo apt purge -y zutty vim-tiny vim-common
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 xdg-user-dirs-update
