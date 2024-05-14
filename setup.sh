@@ -34,17 +34,16 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 sudo apt install -y $(cat tpkg)
-sudo systemctl enable --now ufw
 echo ""
 sudo smbpasswd -a $(whoami)
 echo ""
 sudo systemctl enable smbd
+sudo ufw enable
 sudo ufw allow CUPS
 sudo ufw allow CIFS
 sudo ufw allow Samba
 sudo ufw allow OpenSSH
 sudo cupsctl
-sudo ufw enable
 pipx ensurepath
 chsh -s /usr/bin/fish
 sudo chsh -s /usr/bin/fish
