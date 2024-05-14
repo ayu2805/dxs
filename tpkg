@@ -1,6 +1,7 @@
 accountsservice
 aria2
 arj
+avahi-daemon
 cifs-utils
 cups
 curl
@@ -22,10 +23,12 @@ gtk2-engines-murrine
 gvfs-backends
 gvfs-fuse
 hp-ppd
+iw
 jfsutils
 kpartx
 lbzip2
 liblz4-tool
+libnss-mdns
 libreoffice
 libreoffice-gtk3
 linux-headers-amd64
