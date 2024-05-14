@@ -37,7 +37,6 @@ sudo apt install -y $(cat tpkg)
 echo ""
 sudo smbpasswd -a $(whoami)
 echo ""
-sudo systemctl enable smbd
 sudo ufw enable
 sudo ufw allow CUPS
 sudo ufw allow CIFS
