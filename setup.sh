@@ -25,6 +25,7 @@ fi
 echo ""
 read -r -p "Do you want to install Nvidia drivers(Maxwell+)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    sudo apt install -y linux-headers-amd64
     sudo apt install -y nvidia-detect nvidia-driver firmware-misc-nonfree nvidia-suspend-common
     echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg > /dev/null
     sudo update-grub
