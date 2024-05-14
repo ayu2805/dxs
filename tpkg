@@ -59,6 +59,7 @@ reiserfsprogs
 samba
 smbclient
 system-config-printer
+systemd-resolved
 udftools
 ufw
 unar
