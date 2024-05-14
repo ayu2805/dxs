@@ -1,11 +1,7 @@
-xfce4
-xfce4-power-manager
 xfce4-taskmanager
 xfce4-screenshooter
-xfce4-terminal
 xfce4-clipman
 gthumb
-lightdm
 lightdm-gtk-greeter-settings
 software-properties-gtk
 thunar-archive-plugin
