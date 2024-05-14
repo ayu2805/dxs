@@ -57,6 +57,7 @@ samba
 smbclient
 system-config-printer
 systemd-resolved
+ttf-mscorefonts-installer
 udftools
 ufw
 unar
