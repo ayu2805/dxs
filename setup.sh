@@ -9,9 +9,12 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+
 sudo cp sources.list /etc/apt/
 sudo apt update
 sudo apt upgrade
+sudo apt purge -y $(cat rpkg)
+sudo apt autopurge
 
 echo ""
 read -r -p "Do you want to install AMD/ATI drivers? [y/N] " response
@@ -30,10 +33,6 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 sudo apt install -y $(cat tpkg)
-sudo systemctl enable --now iwd
-sudo systemctl enable --now systemd-resolved
-sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-sudo systemctl enable --now cups
 sudo systemctl enable --now ufw
 echo ""
 sudo smbpasswd -a $(whoami)
@@ -145,14 +144,11 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y cloudflare-warp
 fi
 
-echo ""
-sudo apt purge -y zutty vim-tiny vim-common
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
 xdg-user-dirs-update
 cp "XFCE Setup" ~/Desktop/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
-echo -e "[General]\nEnableNetworkConfiguration=true" | sudo tee /etc/iwd/main.conf
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
