@@ -64,7 +64,7 @@ echo "Installing Colloid GTK Theme..."
 echo ""
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
 cd Colloid-gtk-theme/
-sudo ./install.sh --tweaks normal
+sudo ./install.sh
 cd ..
 rm -rf Colloid-gtk-theme/
 
