@@ -154,6 +154,7 @@ fi
 
 mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
+sudo apt install -y ufw
 sudo ufw enable
 sudo ufw allow CUPS
 sudo ufw allow CIFS
