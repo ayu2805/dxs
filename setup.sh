@@ -83,7 +83,6 @@ xfconf-query -c xfwm4 -p /general/scroll_workspaces -n -t bool -s false
 xfconf-query -c xfwm4 -p /general/placement_ratio -n -t int -s 100
 xfconf-query -c xfwm4 -p /general/show_popup_shadow -n -t bool -s true
 xfconf-query -c xfwm4 -p /general/wrap_windows -n -t bool -s false
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -n -t string -s "/usr/share/backgrounds/xfce/xfce-leaves.svg"
 xfconf-query -c xfce4-panel -p /panels -n -t int -s 1 -a
 xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 32
 xfconf-query -c xfce4-panel -p /panels/panel-1/icon-size -n -t int -s 16
