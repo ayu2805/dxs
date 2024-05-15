@@ -37,6 +37,11 @@ sudo apt install -y $(cat tpkg)
 echo ""
 sudo smbpasswd -a $(whoami)
 echo ""
+sudo ufw enable
+sudo ufw allow CUPS
+sudo ufw allow CIFS
+sudo ufw allow Samba
+sudo ufw allow OpenSSH
 sudo cupsctl
 pipx ensurepath
 chsh -s /usr/bin/fish
@@ -152,14 +157,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y cloudflare-warp
 fi
 
-mkdir -p ~/.config/
 cp QtProject.conf ~/.config/
-sudo apt install -y ufw
-sudo ufw enable
-sudo ufw allow CUPS
-sudo ufw allow CIFS
-sudo ufw allow Samba
-sudo ufw allow OpenSSH
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
