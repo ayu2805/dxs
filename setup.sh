@@ -157,6 +157,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 cp QtProject.conf ~/.config/
+sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
