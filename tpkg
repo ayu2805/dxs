@@ -3,7 +3,6 @@ adb
 alsa-utils
 aria2
 arj
-avahi-daemon
 cifs-utils
 cups
 curl
@@ -29,7 +28,6 @@ jfsutils
 kpartx
 lbzip2
 liblz4-tool
-libnss-mdns
 lrzip
 lzip
 lzop
