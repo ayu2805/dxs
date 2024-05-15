@@ -57,26 +57,10 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-echo "Installing Papirus Icon Theme..."
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-
-echo ""
-echo "Installing Colloid GTK Theme..."
-echo ""
-git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
-cd Colloid-gtk-theme/
-sudo ./install.sh
-cd ..
-rm -rf Colloid-gtk-theme/
-
-echo ""
 echo "Installing XFCE..."
 echo ""
 sudo apt install -y $(cat xfce)
-xfconf-query -c xsettings -p /Net/IconThemeName -n -t string -s "Papirus-Dark"
-xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Colloid-Dark"
 xfconf-query -c xfwm4 -p /general/button_layout -n -t string -s "|HMC"
-xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Colloid-Dark"
 xfconf-query -c xfwm4 -p /general/raise_with_any_button -n -t bool -s false
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -n -t bool -s false
 xfconf-query -c xfwm4 -p /general/scroll_workspaces -n -t bool -s false
@@ -95,6 +79,22 @@ xfconf-query -c xfce4-notifyd -p  /expire-timeout -n -t int -s 5
 xfconf-query -c xfce4-notifyd -p  /initial-opacity -n -t double -s 1
 sudo sed -i 's/^#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
+
+echo ""
+read -r -p "Do you want to install Papirus Icon Theme and Colloid GTK Theme? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    wget -qO- https://git.io/papirus-icon-theme-install | sh
+
+    git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
+    cd Colloid-gtk-theme/
+    sudo ./install.sh
+    cd ..
+    rm -rf Colloid-gtk-theme/
+
+    xfconf-query -c xsettings -p /Net/IconThemeName -n -t string -s "Papirus-Dark"
+    xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Colloid-Dark"
+    xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Colloid-Dark"
+fi
 
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
