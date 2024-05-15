@@ -23,7 +23,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo ""
-read -r -p "Do you want to install Nvidia drivers(Maxwell+)? [y/N] " response
+read -r -p "Do you want to install Nvidia drivers(Kepler+)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt install -y linux-headers-amd64
     sudo apt install -y nvidia-detect nvidia-driver firmware-misc-nonfree nvidia-suspend-common
@@ -31,6 +31,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo update-grub
     sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
     echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' | sudo tee /etc/modprobe.d/nvidia-power-management.conf > /dev/null
+    sudo cp prime-run /usr/bin/
 fi
 
 sudo apt install -y $(cat tpkg)
