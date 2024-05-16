@@ -34,6 +34,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 sudo apt install -y $(cat tpkg)
+systemctl --user --now enable wireplumber.service
 echo ""
 sudo smbpasswd -a $(whoami)
 echo ""
