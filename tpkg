@@ -43,6 +43,8 @@ openssh-client
 openssh-server
 pbzip2
 pigz
+pipewire-alsa
+pipewire-pulse
 pipx
 plzip
 printer-driver-all
@@ -59,6 +61,7 @@ udftools
 ufw
 unar
 wget
+wireplumber
 wl-clipboard
 xclip
 xfsprogs
