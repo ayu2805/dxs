@@ -51,7 +51,7 @@ if dpkg -l | grep -q "nvidia-driver"; then
     fish -c 'alias  --save prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"'
 fi
 echo -e "VISUAL=nvim\nEDITOR=nvim" | sudo tee /etc/environment > /dev/null
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo ""
 read -r -p "Do you want to create a Samba Shared folder? [y/N] " response
