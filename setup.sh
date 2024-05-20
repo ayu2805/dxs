@@ -90,6 +90,7 @@ read -r -p "Do you want to install Papirus Icon Theme and Colloid GTK Theme? [y/
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     wget -qO- https://git.io/papirus-icon-theme-install | sh
 
+    echo ""
     git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
     cd Colloid-gtk-theme/
     sudo ./install.sh
