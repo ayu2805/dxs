@@ -13,8 +13,6 @@ fi
 sudo cp sources.list /etc/apt/
 sudo apt update
 sudo apt upgrade
-sudo apt purge -y $(cat rpkg)
-sudo apt -y autopurge
 
 echo ""
 read -r -p "Do you want to install AMD/ATI drivers? [y/N] " response
@@ -174,6 +172,9 @@ fi
 
 cp QtProject.conf ~/.config/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
+
+sudo apt purge -y $(cat rpkg)
+sudo apt -y autopurge
 
 echo ""
 read -r -p "Do you want to reboot (recommended)? [y/N] " response
