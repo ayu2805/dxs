@@ -169,6 +169,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
     sudo apt update
     sudo apt install -y cloudflare-warp
+    warp-cli generate-completions fish | sudo tee /etc/fish/completions/warp-cli.fish > /dev/null
 fi
 
 cp QtProject.conf ~/.config/
