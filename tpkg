@@ -28,7 +28,6 @@ jfsutils
 kpartx
 lbzip2
 liblz4-tool
-libspa-0.2-bluetooth
 lrzip
 lzip
 lzop
@@ -44,7 +43,7 @@ openssh-client
 openssh-server
 pbzip2
 pigz
-pipewire-pulse
+pipewire-audio
 pipx
 plzip
 printer-driver-all
@@ -61,7 +60,6 @@ udftools
 ufw
 unar
 wget
-wireplumber
 wl-clipboard
 xclip
 xfsprogs
