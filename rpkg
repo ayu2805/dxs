@@ -15,3 +15,6 @@ quodlibet
 xserver-xorg-video-intel
 firefox-esr
 lynx
+libpulse-mainloop-glib0
+libpulse0
+pipewire-pulse
