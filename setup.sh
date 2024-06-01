@@ -80,6 +80,9 @@ xfconf-query -c xfce4-notifyd -p  /do-slideout -n -t bool -s true
 xfconf-query -c xfce4-notifyd -p  /notify-location -n -t int -s 3
 xfconf-query -c xfce4-notifyd -p  /expire-timeout -n -t int -s 5
 xfconf-query -c xfce4-notifyd -p  /initial-opacity -n -t double -s 1
+xfconf-query -c xfce4-notifyd -p /notification-log -n -t bool -s true
+xfconf-query -c xfce4-notifyd -p /log-level -n -t int -s 1
+xfconf-query -c xfce4-notifyd -p /log-max-size -n -t int -s 0
 xfconf-query -c xsettings -p /Xft/DPI -n -t int -s 100
 sudo sed -i 's/^#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
