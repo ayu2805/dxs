@@ -1,14 +1,8 @@
-bleachbit
-gnome-disk-utility
 gpart
 gparted
 gthumb
 lightdm-gtk-greeter-settings
 mpv
-network-manager-openconnect-gnome
-network-manager-openvpn-gnome
-network-manager-pptp-gnome
-network-manager-vpnc-gnome
 software-properties-gtk
 thunar-archive-plugin
 xfce4-clipman-plugin
