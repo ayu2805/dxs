@@ -6,8 +6,6 @@ cifs-utils
 cups
 curl
 default-jdk
-dmraid
-dmsetup
 dosfstools
 e2fsprogs
 exfatprogs
@@ -20,12 +18,11 @@ g++
 gcc
 gdebi
 git
+gpart
 gtk2-engines-murrine
 gvfs-backends
 gvfs-fuse
 hp-ppd
-jfsutils
-kpartx
 lbzip2
 liblz4-tool
 lrzip
@@ -50,13 +47,10 @@ printer-driver-all
 printer-driver-cups-pdf
 python3
 rar
-reiser4progs
-reiserfsprogs
 samba
 sassc
 smbclient
 system-config-printer
-udftools
 ufw
 unar
 wget
