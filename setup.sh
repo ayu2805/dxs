@@ -31,7 +31,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' | sudo tee /etc/modprobe.d/nvidia-power-management.conf > /dev/null
 fi
 
-sudo apt install -y $(cat tpkg)
+sudo apt install -y $(cat common)
 systemctl --user --now enable wireplumber.service
 echo ""
 sudo smbpasswd -a $(whoami)
@@ -179,7 +179,7 @@ fi
 cp QtProject.conf ~/.config/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 
-sudo apt purge -y $(cat rpkg)
+sudo apt purge -y $(cat remove)
 sudo apt -y autopurge
 
 echo ""
